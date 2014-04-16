@@ -9,4 +9,14 @@ class Post < ActiveRecord::Base
       access_key_id: Rails.application.secrets.s3_access_key,
       secret_access_key: Rails.application.secrets.s3_secret_key
     }
+
+    def tag_names
+    	''
+    end
+
+    def tag_names=(tag_names)
+    	raise tag_names
+    end
+
 end
+

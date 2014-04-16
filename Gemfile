@@ -37,6 +37,7 @@ end
 group :development, :test do
 	gem 'rspec-rails'
 	gem 'capybara'
+	gem 'minitest'
 end
 
 group :production do

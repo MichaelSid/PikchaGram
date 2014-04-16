@@ -166,6 +166,7 @@ DEPENDENCIES
   heroku_secrets!
   jbuilder (~> 1.2)
   jquery-rails
+  minitest
   paperclip (~> 3)
   pg
   rails (= 4.1.0)

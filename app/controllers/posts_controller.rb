@@ -10,13 +10,20 @@ class PostsController < ApplicationController
 
 	def create
 		puts params
-		@post = Post.new params[:post].permit(:description, :picture)
+		@post = Post.new params[:post].permit(:description, :picture, :tag_names)
 
 		if @post.save
 			redirect_to '/posts'
 		else
 			render 'new'
 		end
+	end
+
+	def destroy 
+		@post = Post.find params[:id]
+		@post.destroy
+
+		redirect_to '/posts'
 	end
 
 end
