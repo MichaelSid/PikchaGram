@@ -1,0 +1,23 @@
+		<div class='col-md-4'>
+			
+			
+			<%=image_tag post.picture.url(:medium)%>
+			
+			<h3><%= post.description %></h3>
+			<p>
+				<% post.tags.each do |tag| %>
+					<%= link_to tag.name, tag_path(tag) %>
+				<% end %>
+			</p>
+
+			<p>
+				<%= pluralize post.comments.count, 'comment'%> 
+			</p>
+
+			<p>
+				<%= link_to 'Delete', post_path(post), method: :delete, class: 'btn btn-danger' %>
+				<%= link_to 'Add a comment', new_post_comment_path(post), class: 'btn btn-primary' %>
+				<%= link_to 'Buy', new_post_charge_path(post), class: 'btn btn-success' %>
+			</p>
+			
+		</div>
